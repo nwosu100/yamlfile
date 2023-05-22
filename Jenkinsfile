@@ -42,7 +42,7 @@ node('rhel8'){
 }
 
 node('rhel8'){
-  if(publishPreRelease.equals('true')){
+  /*if(publishPreRelease.equals('true')){
     stage "publish generic version"
 		withCredentials([[$class: 'StringBinding', credentialsId: 'vscode_java_marketplace', variable: 'TOKEN']]) {
 			sh 'vsce publish --pre-release -p ${TOKEN}'
@@ -56,7 +56,7 @@ node('rhel8'){
 				sh 'vsce publish -p ${TOKEN}' + " --packagePath ${platformVsix.path}"
 			}
 		}
-  } else if(publishToMarketPlace.equals('true')){
+  } else*/ if(publishToMarketPlace.equals('true')){
     timeout(time:5, unit:'DAYS') {
       input message:'Approve deployment?', submitter: 'yvydolob, msivasub'
     }
